@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "390752582510",
+    "project_id": "voiceform-e1989",
+    "storage_bucket": "voiceform-e1989.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390752582510:android:69d57bbde7b34acf7f5f7f",
+        "android_client_info": {
+          "package_name": "com.vanisahayak.vani_sahayak"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKaYXyMVC8InCo7X8YdZgmYP5i-JFnyMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

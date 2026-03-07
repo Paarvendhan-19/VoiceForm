@@ -22,7 +22,7 @@ Session _$SessionFromJson(Map<String, dynamic> json) => Session(
 Map<String, dynamic> _$SessionToJson(Session instance) => <String, dynamic>{
   'id': instance.id,
   'userId': instance.userId,
-  'form': instance.form,
+  'form': instance.form.toJson(),
   'filledData': instance.filledData,
   'status': _$SessionStatusEnumMap[instance.status]!,
   'createdAt': instance.createdAt.toIso8601String(),

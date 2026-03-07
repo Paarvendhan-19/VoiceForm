@@ -5,7 +5,7 @@ import 'session_status.dart';
 part 'session.g.dart';
 
 /// Represents a form-filling session
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class Session {
   /// Unique identifier for the session
   final String id;

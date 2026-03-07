@@ -16,7 +16,7 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
   - _Requirements: 7.1, 7.2, 7.3, 7.4, 7.5, 8.1_
 
 - [ ] 2. Implement data models and serialization
-  - [-] 2.1 Create core data model classes
+  - [x] 2.1 Create core data model classes
     - Implement FormStructure, FormField, FieldType enum
     - Implement Session, SessionStatus enum
     - Implement User, Language models
@@ -24,13 +24,13 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - Add JSON serialization/deserialization for all models
     - _Requirements: 1.3, 3.3, 4.3_
   
-  - [ ] 2.2 Write property test for data model serialization
+  - [x] 2.2 Write property test for data model serialization
     - **Property: Serialization Round-Trip**
     - **Validates: Requirements 1.3, 3.4**
     - Test that for any model instance, serializing to JSON then deserializing produces an equivalent object
 
 - [ ] 3. Implement authentication module
-  - [~] 3.1 Create AuthService with Firebase Auth integration
+  - [x] 3.1 Create AuthService with Firebase Auth integration
     - Implement signInWithGoogle() method
     - Implement signInWithPhone() method
     - Implement signOut() method
@@ -38,19 +38,19 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - Implement currentUser getter
     - _Requirements: 1.1, 1.2_
   
-  - [~] 3.2 Create AuthStateProvider using Riverpod
+  - [x] 3.2 Create AuthStateProvider using Riverpod
     - Define StreamProvider for auth state
     - Handle auth state changes
     - _Requirements: 1.2, 8.2_
   
-  - [~] 3.3 Create LoginScreen UI
+  - [x] 3.3 Create LoginScreen UI
     - Design Material 3 UI with Indian Flag theme
     - Add Google sign-in button (Green color)
     - Add phone authentication option
     - Handle authentication callbacks
     - _Requirements: 1.1, 7.1, 7.2, 7.3, 7.4, 7.5_
   
-  - [ ] 3.4 Write property test for authentication session creation
+  - [-] 3.4 Write property test for authentication session creation
     - **Property 2: Authentication Creates Session**
     - **Validates: Requirements 1.2**
     - Test that for any successful authentication, a session record is created in Firebase
@@ -62,7 +62,7 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - _Requirements: 1.1, 1.2_
 
 - [ ] 4. Implement session management module
-  - [~] 4.1 Create SessionService with Firestore integration
+  - [ ] 4.1 Create SessionService with Firestore integration
     - Implement createSession() method
     - Implement updateSession() method
     - Implement getSession() method
@@ -70,13 +70,13 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - Implement deleteSession() method
     - _Requirements: 1.3, 1.4, 1.5, 10.1, 10.4_
   
-  - [~] 4.2 Create SessionProvider using Riverpod
+  - [ ] 4.2 Create SessionProvider using Riverpod
     - Define StateNotifierProvider for current session
     - Handle session state updates
     - Implement session persistence to Firestore
     - _Requirements: 1.3, 1.4, 8.2, 8.3_
   
-  - [~] 4.3 Implement local storage with Hive
+  - [ ] 4.3 Implement local storage with Hive
     - Set up Hive boxes (auth_box, session_box, settings_box, queue_box)
     - Implement save/restore methods for session state
     - _Requirements: 1.4, 1.5, 8.4, 8.5_
@@ -95,7 +95,7 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 6. Implement Bhashini API integration for voice interface
-  - [~] 6.1 Create BhashiniService API client
+  - [ ] 6.1 Create BhashiniService API client
     - Implement speechToText() method with API integration
     - Implement textToSpeech() method with API integration
     - Implement getSupportedLanguages() method
@@ -103,13 +103,13 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - Add error handling and retry logic with exponential backoff
     - _Requirements: 2.2, 2.3, 9.2_
   
-  - [~] 6.2 Create VoiceController for audio recording and playback
+  - [ ] 6.2 Create VoiceController for audio recording and playback
     - Implement audio recording using microphone
     - Implement audio playback for TTS responses
     - Handle audio permissions
     - _Requirements: 2.3, 2.2_
   
-  - [~] 6.3 Create LanguageProvider using Riverpod
+  - [ ] 6.3 Create LanguageProvider using Riverpod
     - Define StateProvider for selected language
     - Implement language persistence to local storage
     - _Requirements: 2.1, 2.5_
@@ -136,26 +136,26 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - _Requirements: 2.2, 2.3, 2.4_
 
 - [ ] 7. Implement form scanner module with Gemini Vision
-  - [~] 7.1 Create CameraService for image capture
+  - [ ] 7.1 Create CameraService for image capture
     - Implement camera initialization
     - Implement image capture with quality settings
     - Handle camera permissions
     - _Requirements: 3.1_
   
-  - [~] 7.2 Create GeminiVisionService API client
+  - [ ] 7.2 Create GeminiVisionService API client
     - Implement analyzeForm() method with Gemini 2.0 Flash Vision API
     - Add image encoding and transmission
     - Add authentication header handling
     - Implement rate limit handling
     - _Requirements: 3.2, 9.1_
   
-  - [~] 7.3 Create FormParser to convert Gemini responses
+  - [ ] 7.3 Create FormParser to convert Gemini responses
     - Parse Gemini JSON response to FormStructure
     - Extract field labels, types, coordinates, and required status
     - Validate extracted data completeness
     - _Requirements: 3.3_
   
-  - [~] 7.4 Create ScanScreen UI
+  - [ ] 7.4 Create ScanScreen UI
     - Design camera view with guidance overlay
     - Add capture button (Green color)
     - Add loading indicator for processing
@@ -192,21 +192,21 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 9. Implement conversation engine with Gemini
-  - [~] 9.1 Create GeminiConversationService API client
+  - [ ] 9.1 Create GeminiConversationService API client
     - Implement generateQuestion() method with Gemini 2.0 Flash API
     - Implement validateResponse() method
     - Add context management for conversation history
     - Add authentication and rate limit handling
     - _Requirements: 4.1, 4.3, 9.1_
   
-  - [~] 9.2 Create ValidationService for field validation
+  - [ ] 9.2 Create ValidationService for field validation
     - Implement date validation logic
     - Implement numeric validation logic
     - Implement required field validation logic
     - Implement field-type-specific validation
     - _Requirements: 5.1, 5.2, 5.3_
   
-  - [~] 9.3 Create ConversationController using Riverpod
+  - [ ] 9.3 Create ConversationController using Riverpod
     - Define StateNotifierProvider for conversation state
     - Implement question generation flow
     - Implement response processing flow
@@ -214,7 +214,7 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - Implement field editing capability
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 4.7_
   
-  - [~] 9.4 Create ConversationScreen UI
+  - [ ] 9.4 Create ConversationScreen UI
     - Design voice interaction UI with waveform animation
     - Add VoiceButton widget with listening/processing states
     - Display current question text
@@ -259,13 +259,13 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - _Requirements: 4.1, 4.3, 4.4_
 
 - [ ] 10. Implement offline support and sync
-  - [~] 10.1 Create SyncService for background synchronization
+  - [ ] 10.1 Create SyncService for background synchronization
     - Implement operation queue for offline actions
     - Implement automatic retry when connection restored
     - Add network connectivity monitoring
     - _Requirements: 5.5_
   
-  - [~] 10.2 Add offline indicators to UI
+  - [ ] 10.2 Add offline indicators to UI
     - Display offline status in AppBar
     - Show queued operations count
     - Add manual sync button
@@ -280,7 +280,7 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 12. Implement PDF generation with AWS Lambda
-  - [~] 12.1 Create Python Lambda function for PDF generation
+  - [ ] 12.1 Create Python Lambda function for PDF generation
     - Implement lambda_handler() function
     - Add PyMuPDF integration for PDF creation
     - Implement text overlay logic with coordinate mapping
@@ -289,7 +289,7 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - Add error handling and logging
     - _Requirements: 6.2, 6.3_
   
-  - [~] 12.2 Create LambdaService API client in Flutter
+  - [ ] 12.2 Create LambdaService API client in Flutter
     - Implement generatePDF() method
     - Add request serialization
     - Add response parsing
@@ -297,7 +297,7 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - Add retry logic for Lambda cold starts
     - _Requirements: 6.1, 6.4, 9.3_
   
-  - [~] 12.3 Create PDFService to coordinate PDF generation
+  - [ ] 12.3 Create PDFService to coordinate PDF generation
     - Implement PDF generation flow orchestration
     - Handle Firebase Storage URL retrieval
     - Add progress tracking
@@ -321,14 +321,14 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - _Requirements: 6.1, 6.2, 6.3_
 
 - [ ] 13. Implement PDF viewing and download
-  - [~] 13.1 Create PDFViewScreen UI
+  - [ ] 13.1 Create PDFViewScreen UI
     - Add PDF preview widget
     - Add download button (Green color)
     - Add share button
     - Display file size and metadata
     - _Requirements: 6.5_
   
-  - [~] 13.2 Implement PDF download functionality
+  - [ ] 13.2 Implement PDF download functionality
     - Add file download to device storage
     - Handle storage permissions
     - Show download progress
@@ -341,20 +341,20 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - Test that for any PDF download, the file is accessible after app restart
 
 - [ ] 14. Implement form history and management
-  - [~] 14.1 Create HistoryScreen UI
+  - [ ] 14.1 Create HistoryScreen UI
     - Display list of completed forms with thumbnails
     - Show form completion dates
     - Add sort by date (most recent first)
     - Add delete button for each form
     - _Requirements: 10.2, 10.5_
   
-  - [~] 14.2 Implement form history data fetching
+  - [ ] 14.2 Implement form history data fetching
     - Query Firestore for user's completed sessions
     - Load form thumbnails from Firebase Storage
     - Implement pagination for large lists
     - _Requirements: 10.2_
   
-  - [~] 14.3 Implement form deletion
+  - [ ] 14.3 Implement form deletion
     - Delete session data from Firestore
     - Delete PDF from Firebase Storage
     - Update UI after deletion
@@ -381,21 +381,21 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - Test that for any list of forms, they are sorted by date descending
 
 - [ ] 15. Implement ReviewScreen for form confirmation
-  - [~] 15.1 Create ReviewScreen UI
+  - [ ] 15.1 Create ReviewScreen UI
     - Display all filled fields with values
     - Add edit button for each field
     - Add confirm button (Green color)
     - Show form thumbnail
     - _Requirements: 4.6_
   
-  - [~] 15.2 Implement field editing from review
+  - [ ] 15.2 Implement field editing from review
     - Navigate back to specific field in conversation
     - Update conversation state
     - Return to review after edit
     - _Requirements: 4.7_
 
 - [ ] 16. Implement HomeScreen and navigation
-  - [~] 16.1 Create HomeScreen UI
+  - [ ] 16.1 Create HomeScreen UI
     - Add language selector widget
     - Add "New Form" button (Green color)
     - Add "History" button
@@ -403,7 +403,7 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - Use Saffron AppBar with Navy Blue icons
     - _Requirements: 2.1, 7.1, 7.2, 7.5_
   
-  - [~] 16.2 Implement app navigation with routes
+  - [ ] 16.2 Implement app navigation with routes
     - Set up named routes for all screens
     - Implement navigation flow: Home → Scan → Conversation → Review → PDF
     - Handle back navigation properly
@@ -411,38 +411,38 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - _Requirements: 1.5_
 
 - [ ] 17. Implement shared widgets and UI components
-  - [~] 17.1 Create VoiceButton widget
+  - [ ] 17.1 Create VoiceButton widget
     - Add listening animation (pulsing effect)
     - Add processing state indicator
     - Use Navy Blue for icon
     - _Requirements: 7.6_
   
-  - [~] 17.2 Create FormFieldCard widget
+  - [ ] 17.2 Create FormFieldCard widget
     - Display field label and value
     - Add edit button
     - Use White background with subtle shadow
     - _Requirements: 7.3_
   
-  - [~] 17.3 Create LanguageSelector widget
+  - [ ] 17.3 Create LanguageSelector widget
     - Display supported languages with native names
     - Highlight selected language
     - Use Green for selection indicator
     - _Requirements: 2.1, 2.5_
   
-  - [~] 17.4 Create LoadingIndicator widget
+  - [ ] 17.4 Create LoadingIndicator widget
     - Show progress for AI requests
     - Display status messages
     - Use Indian Flag colors for progress bar
     - _Requirements: 7.7_
 
 - [ ] 18. Implement API error handling and resilience
-  - [~] 18.1 Create ErrorHandler utility class
+  - [ ] 18.1 Create ErrorHandler utility class
     - Implement withRetry() method with exponential backoff
     - Implement getUserFriendlyMessage() for error translation
     - Add error logging
     - _Requirements: 9.2, 9.4_
   
-  - [~] 18.2 Add error handling to all API services
+  - [ ] 18.2 Add error handling to all API services
     - Wrap all API calls with retry logic
     - Validate all API responses before processing
     - Display user-friendly error messages
@@ -469,7 +469,7 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - Test that for any failed API call, a user-friendly error is displayed
 
 - [ ] 19. Implement state management with Riverpod
-  - [~] 19.1 Wire all providers together
+  - [ ] 19.1 Wire all providers together
     - Create ProviderScope at app root
     - Set up provider dependencies
     - Implement provider observers for debugging
@@ -486,7 +486,7 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - Test that for any critical data change, it is persisted immediately
 
 - [ ] 20. Implement loading indicators for AI operations
-  - [~] 20.1 Add loading state to all AI service calls
+  - [ ] 20.1 Add loading state to all AI service calls
     - Show loading indicator during Gemini API calls
     - Show loading indicator during Bhashini API calls
     - Show loading indicator during Lambda calls
@@ -498,7 +498,7 @@ This implementation plan breaks down the Vani-Sahayak mobile application into di
     - Test that for any AI API request, a loading indicator is displayed
 
 - [ ] 21. Final integration and end-to-end testing
-  - [~] 21.1 Test complete user flow
+  - [ ] 21.1 Test complete user flow
     - Test: Launch app → Authenticate → Scan form → Fill via voice → Generate PDF → Download
     - Verify all components work together
     - Test with multiple languages

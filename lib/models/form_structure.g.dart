@@ -21,7 +21,7 @@ FormStructure _$FormStructureFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$FormStructureToJson(FormStructure instance) =>
     <String, dynamic>{
       'formId': instance.formId,
-      'fields': instance.fields,
-      'originalImage': instance.originalImage,
+      'fields': instance.fields.map((e) => e.toJson()).toList(),
+      'originalImage': instance.originalImage.toJson(),
       'scannedAt': instance.scannedAt.toIso8601String(),
     };

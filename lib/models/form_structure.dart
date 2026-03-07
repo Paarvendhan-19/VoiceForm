@@ -5,7 +5,7 @@ import 'image_data.dart';
 part 'form_structure.g.dart';
 
 /// Represents the complete structure of a scanned form
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class FormStructure {
   /// Unique identifier for the form
   final String formId;

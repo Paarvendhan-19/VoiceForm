@@ -71,9 +71,8 @@ class FirebaseAuthService implements AuthService {
       // This is a simplified implementation
       // In a real app, you would need to handle SMS verification
       // For now, we'll throw an exception indicating this needs UI interaction
-      throw UnimplementedError(
-        'Phone authentication requires SMS verification flow with UI callbacks. '
-        'Use Firebase Auth\'s verifyPhoneNumber method with verification callbacks.',
+      throw AuthException(
+        'Phone authentication is coming soon.',
       );
     } catch (e) {
       throw AuthException('Phone sign-in failed: $e');

@@ -13,9 +13,11 @@ void main() async {
   await Hive.initFlutter();
 
   // Initialize Firebase
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  try {
+    await Firebase.initializeApp();
+  } catch (e) {
+    debugPrint('Firebase initialization warning: $e');
+  }
 
   runApp(
     const ProviderScope(

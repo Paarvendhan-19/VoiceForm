@@ -21,7 +21,11 @@ class PDFPreviewScreen extends ConsumerWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.share_rounded),
-            onPressed: () {},
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Sharing coming soon!')),
+              );
+            },
           ),
         ],
       ),
@@ -131,7 +135,11 @@ class PDFPreviewScreen extends ConsumerWidget {
                 children: [
                   GradientButton(
                     text: 'Download PDF',
-                    onPressed: () {},
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Downloading PDF...')),
+                      );
+                    },
                     icon: Icons.download_rounded,
                     width: double.infinity,
                     gradient: AppTheme.secondaryGradient,

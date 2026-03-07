@@ -111,7 +111,11 @@ class _ScanFormScreenState extends ConsumerState<ScanFormScreen> {
                   ),
                   const SizedBox(height: 16),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Opening Gallery...')),
+                      );
+                    },
                     child: const Text(
                       'Upload from Gallery',
                       style: TextStyle(

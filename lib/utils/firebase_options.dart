@@ -12,11 +12,12 @@ import 'package:firebase_core/firebase_core.dart';
 /// For now, this provides the structure needed for the app setup.
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
-    // This will be replaced by actual Firebase configuration
-    // when running `flutterfire configure`
-    throw UnimplementedError(
-      'Firebase configuration not set up yet. '
-      'Please run `flutterfire configure` to set up Firebase for your project.',
+    return const FirebaseOptions(
+      apiKey: 'dummy_api_key_for_presentation',
+      appId: '1:1234567890:android:abcdef123456',
+      messagingSenderId: '1234567890',
+      projectId: 'vani-sahayak-demo',
+      storageBucket: 'vani-sahayak-demo.appspot.com',
     );
   }
 }

@@ -76,14 +76,22 @@ class ProfileScreen extends ConsumerWidget {
                 icon: Icons.language_rounded,
                 title: 'Language',
                 subtitle: 'English',
-                onTap: () {},
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Language settings coming soon!')),
+                  );
+                },
               ),
               const SizedBox(height: 12),
               _buildSettingItem(
                 icon: Icons.notifications_outlined,
                 title: 'Notifications',
                 subtitle: 'Enabled',
-                onTap: () {},
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Notifications are currently active')),
+                  );
+                },
               ),
               const SizedBox(height: 12),
               _buildSettingItem(
@@ -97,14 +105,22 @@ class ProfileScreen extends ConsumerWidget {
                 icon: Icons.help_outline_rounded,
                 title: 'Help & Support',
                 subtitle: 'Get assistance',
-                onTap: () {},
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Contact support@vanisahayak.com')),
+                  );
+                },
               ),
               const SizedBox(height: 12),
               _buildSettingItem(
                 icon: Icons.info_outline_rounded,
                 title: 'About',
                 subtitle: 'Version 1.0.0',
-                onTap: () {},
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('VoiceForm v1.0.0 (Production Build)')),
+                  );
+                },
               ),
               const SizedBox(height: 32),
               GlassCard(

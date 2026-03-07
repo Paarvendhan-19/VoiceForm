@@ -213,7 +213,9 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
               const Spacer(),
               IconButton(
                 icon: const Icon(Icons.edit_outlined, size: 20),
-                onPressed: () {},
+                onPressed: () {
+                  context.push('/pdf-preview/${widget.sessionId}');
+                },
                 color: AppTheme.navyBlue.withOpacity(0.6),
               ),
             ],
